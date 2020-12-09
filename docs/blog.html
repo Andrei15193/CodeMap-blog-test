@@ -2,9 +2,33 @@
 title: "Blog"
 ---
 <ul>
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <li>
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
+
+    <nav>
+        <ul class="pagination">
+            {% if paginator.previous_page_path %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path }}" tabindex="-1">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Newer</a>
+            </li>
+            {% endif %}
+            <li class="page-item"><a class="page-link" href="#">{{ paginator.page }}</a></li>
+            {% if paginator.next_page_path %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Older</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
 </ul>
