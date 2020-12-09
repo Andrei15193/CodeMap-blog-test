@@ -7,7 +7,7 @@ title: "Blog"
     <hr>
     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
     <p>{{ post.excerpt }}</p>
-    <p>Posted on: {{ post.date | date: "%a, %d %b %y" }}</p>
+    <p><em>Posted on: {{ post.date | date: "%a, %d %b %y" }}.</em></p>
     {% endfor %}
     <hr>
 </div>
@@ -23,7 +23,7 @@ title: "Blog"
             <a class="page-link" href="#" tabindex="-1">Newer</a>
         </li>
         {% endif %}
-        <li class="page-item"><a class="page-link" href="#">{{ paginator.page }}</a></li>
+        <li class="page-item"><a class="page-link disabled" href="#">{{ paginator.page }}</a></li>
         {% if paginator.next_page_path %}
         <li class="page-item">
             <a class="page-link" href="{{ site.baseurl }}{{ paginator.next_page_path }}">Older</a>
