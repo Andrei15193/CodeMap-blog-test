@@ -5,7 +5,7 @@ title: "Blog"
 <div class="flex-grow-1 flex-shrink-1">
     {% for post in paginator.posts %}
     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-    <p>{{ page.excerpt }}</p>
+    <p>{{ post.excerpt }}</p>
     {% if is_first %}<hr>{% else %}{% assign is_first = true %}{% endif %}
     {% endfor %}
 </div>
