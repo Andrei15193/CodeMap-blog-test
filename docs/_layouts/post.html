@@ -2,4 +2,5 @@
 layout: "default"
 ---
 <hr>
-Posted by: {{ page.author }} on {{ page.date   date: "%a, %d %b %y" }}
+{{ content }}
+<p><em>Posted by: {{ page.author }}, posted on {{ page.date | date: "%a, %d %b %y" }}.</em></p>
