@@ -4,10 +4,12 @@ title: "Blog"
 
 <div class="flex-grow-1 flex-shrink-1">
     {% for post in paginator.posts %}
+    <hr>
     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
     <p>{{ post.excerpt }}</p>
-    {% if is_first %}<hr>{% else %}{% assign is_first = true %}{% endif %}
+    <p>Posted on: {{ post.date | date: "%a, %d %b %y" }}</p>
     {% endfor %}
+    <hr>
 </div>
 
 <nav class="mt-3">
