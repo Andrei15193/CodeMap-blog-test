@@ -2,13 +2,13 @@
 title: "Blog"
 ---
 
-<ul class="flex-grow-1 flex-shrink-1">
+<div class="flex-grow-1 flex-shrink-1">
     {% for post in paginator.posts %}
-    <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
+    <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+    <p>{{ page.excerpt }}</p>
+    {% if is_first %}<hr>{% else %}{% assign is_first = true %}{% endif %}
     {% endfor %}
-</ul>
+</div>
 
 <nav class="mt-3">
     <ul class="m-0 pagination pagination-sm justify-content-center">
