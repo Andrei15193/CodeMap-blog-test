@@ -21,13 +21,21 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <li class="nav-item">
+                    {{% if page.path == "index.html" %}}
+                    <a class="nav-link" href="{{ site.baseurl }}/blog">Blog</a>
+                    {{% else %}}
+                    <a class="nav-link active" href="{{ site.baseurl }}/blog">Blog</a>
+                    {% endif %}
+                </li>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">CodeMap</a>
                         <div class="dropdown-menu">
                             {% for version in site.data.versions %}
-                            <a class="dropdown-item" href="/{{ version }}/CodeMap/index.html">{{version}}</a>
+                            <a class="dropdown-item"
+                                href="{{ site.baseurl }}/{{ version }}/CodeMap/index.html">{{version}}</a>
                             {% endfor %}
                         </div>
                     </li>
@@ -36,7 +44,8 @@
                             aria-haspopup="true" aria-expanded="false">CodeMap.Handlebars</a>
                         <div class="dropdown-menu">
                             {% for version in site.data.versions %}
-                            <a class="dropdown-item" href="/{{ version }}/CodeMap.Handlebars/index.html">{{version}}</a>
+                            <a class="dropdown-item"
+                                href="{{ site.baseurl }}/{{ version }}/CodeMap.Handlebars/index.html">{{version}}</a>
                             {% endfor %}
                         </div>
                     </li>
@@ -72,7 +81,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
