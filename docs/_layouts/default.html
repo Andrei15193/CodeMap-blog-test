@@ -15,8 +15,7 @@
     <nav id="navigation" class="border-bottom navbar sticky-top navbar-expand-md navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand active" href="{{ site.baseurl }}">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -63,7 +62,7 @@
     <div class="d-flex flex-column flex-grow-1 flex-shrink-1">
         <div class="d-flex flex-column flex-grow-1 flex-shrink-1 container px-2 pt-2">
             <h2>{{ page.title }}</h2>
-
+            {% if with_title_separator %}<hr class="w-100">{% endif %}
             {{ content }}
         </div>
     </div>
